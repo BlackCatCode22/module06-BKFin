@@ -54,7 +54,6 @@ public class Main {
                     // Get age out of 'ageAndSpecies'
                     String[] theParts = ageAndSpecies.split(" ");
                     for (int i = 0; i < theParts.length; i++) {
-                        System.out.println("theParts[" + i + "] is " + theParts[i]);
                     }
                     age = Integer.parseInt(theParts[0]);
                     species = theParts[4];
@@ -63,14 +62,12 @@ public class Main {
                     // Get birthday
                     String[] theParts2 = birthSeason.split(" ");
                     for (int i = 0; i < theParts2.length; i++) {
-                        System.out.println("theParts2[" + i + "] is " + theParts2[i]);
                     }
                     birthday = theParts2[2];
 
                     // Get color
                     String[] theParts3 = animalColor.split(" ");
                     for (int i = 0; i < theParts3.length; i++) {
-                        System.out.println("theParts3[" + i + "] is " + theParts3[i]);
                     }
                     color = String.join(" ", theParts3);
                     // System.out.println("color: " + color);
@@ -78,21 +75,17 @@ public class Main {
                     // Get weight
                     String[] theParts4 = animalWeight.split(" ");
                     for (int i = 0; i < theParts4.length; i++) {
-                        System.out.println("theParts4[" + i + "] is " + theParts4[i]);
                     }
                     weight = String.join(" ", theParts4);
-                    System.out.println("weight: " + weight);
 
                     // Get Location Part 1
                     String[] theParts5 = animLocationA.split(" ");
                     for (int i = 0; i < theParts5.length; i++) {
-                        System.out.println("theParts5[" + i + "] is " + theParts5[i]);
                     }
 
                     // Get Location Part 2
                     String[] theParts6 = animLocationB.split(" ");
                     for (int i = 0; i < theParts6.length; i++) {
-                        System.out.println("theParts6[" + i + "] is " + theParts6[i]);
                     }
 
                     String habitat1 = String.join(" ", theParts5);
@@ -108,23 +101,11 @@ public class Main {
                     // Add the new Animal object to the ArrayList of Animals
                     animals.add(myAnimal);
                 }
-                System.out.println("\n Number of animals is: " + Animal.numOfAnimals);
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + filePath);
             e.printStackTrace();
         }
-
-        // We now have an arrayList of Animals. Let's output them!
-        for (Animal animal : animals) {
-            System.out.println(animal);
-            System.out.println("Animal ID: " + animal.id + ", Animal name: " + animal.getName() + ", Age: "
-                    + animal.getAge() + ", Species: "
-                    + animal.getSpecies() + ", Birthday: " + animal.getBirthday() + ", Color: " + animal.getColor()
-                    + ", Weight: "
-                    + animal.getWeight() + ", Habitat: " + animal.getHabitat());
-        }
-        System.out.println("\n Number of animals is: " + Animal.numOfAnimals);
 
         // Parse the animalNames.txt file and pull the names separated by commas
         // Then use the setter to overwrite the names in the ArrayList
@@ -146,8 +127,6 @@ public class Main {
             while (scanner.hasNextLine()) {
                 String aLine = scanner.nextLine();
 
-                System.out.println("\n aLine = " + aLine);
-
                 if (aLine.contains("Hyena")) {
                     // Skip the next line because it is a blank line.
                     scanner.nextLine();
@@ -155,9 +134,6 @@ public class Main {
                     // Split this line on a comma and a space and save the hyena names to a String
                     // array.
                     String[] myHyenaNamesArray = scanner.nextLine().split(", ");
-                    // Output the names to see if this works.
-                    for (String someName : myHyenaNamesArray)
-                        System.out.println(someName);
                     // Use the same for loop to get the array into the proper ArrayList.
                     for (String someName : myHyenaNamesArray)
                         hyenaNames.add(someName);
@@ -170,9 +146,6 @@ public class Main {
                     // Split this line on a comma and a space and save the hyena names to a String
                     // array.
                     String[] myLionsNamesArray = scanner.nextLine().split(", ");
-                    // Output the names to see if this works.
-                    for (String someName : myLionsNamesArray)
-                        System.out.println(someName);
                     // Use the same for loop to get the array into the proper ArrayList.
                     for (String someName : myLionsNamesArray)
                         lionNames.add(someName);
@@ -185,9 +158,6 @@ public class Main {
                     // Split this line on a comma and a space and save the hyena names to a String
                     // array.
                     String[] myTigerNamesArray = scanner.nextLine().split(", ");
-                    // Output the names to see if this works.
-                    for (String someName : myTigerNamesArray)
-                        System.out.println(someName);
                     // Use the same for loop to get the array into the proper ArrayList.
                     for (String someName : myTigerNamesArray)
                         tigerNames.add(someName);
@@ -200,9 +170,6 @@ public class Main {
                     // Split this line on a comma and a space and save the hyena names to a String
                     // array.
                     String[] myBearsNamesArray = scanner.nextLine().split(", ");
-                    // Output the names to see if this works.
-                    for (String someName : myBearsNamesArray)
-                        System.out.println(someName);
                     // Use the same for loop to get the array into the proper ArrayList.
                     for (String someName : myBearsNamesArray)
                         bearNames.add(someName);
@@ -254,8 +221,6 @@ public class Main {
             }
             // Determine birthday
             String birthCalc = genBirthDay(animal.getAge(), animal.getBirthday());
-            System.out.println("Birthday: " + animal.getBirthday() + ", Age: " + animal.getAge());
-            System.out.println("BirthCalc: " + birthCalc);
             animal.setBirthday(birthCalc);
         }
 
@@ -312,8 +277,6 @@ public class Main {
         int year = 0;
         int birthYear = 0;
         String birthString = "";
-
-        System.out.println("Incoming age: " + animAge + ", Incoming Birthday: " + animBirthday);
 
         if (animBirthday.equals("spring")) {
             month = "Mar";
