@@ -214,8 +214,9 @@ public class Main {
             e.printStackTrace();
         }
 
-        // Refactored this code to compact it up, instead of having multiple loop
-        // statements
+        // Name the animals, removing the name after each loop
+        // Setting a unique ID as well during the loop.  With the names removed
+        // the IDs/Names can't be duplicated
 
         int hyID = 1;
         int liID = 1;
@@ -273,13 +274,13 @@ public class Main {
             for (Animal animal : animals) {
 
                 if (lineNumber == 5) {
-                    writer.write("\nLion Habitat:");
+                    writer.write("\n\nLion Habitat:");
                 }
                 if (lineNumber == 9) {
-                    writer.write("\nTiger Habitat:");
+                    writer.write("\n\nTiger Habitat:");
                 }
                 if (lineNumber == 13) {
-                    writer.write("\nBear Habitat:");
+                    writer.write("\n\nBear Habitat:");
                 }
 
                 lineNumber++;
